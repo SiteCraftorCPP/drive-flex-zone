@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { FileText, Smartphone, DollarSign, CheckCircle } from "lucide-react";
+import { FileText, Smartphone, DollarSign, CheckCircle, SmartphoneIcon, Target } from "lucide-react";
 
 const HowItWorks = () => {
   const steps = [
@@ -33,8 +33,8 @@ const HowItWorks = () => {
     <section className="py-20 bg-secondary text-secondary-foreground relative overflow-hidden">
       {/* Diagonal Decoration */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 transform skew-x-12 translate-x-1/3" />
-      
-      <div className="container mx-auto px-4 relative z-10">
+
+      <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16 animate-fade-in">
           <span className="text-primary font-semibold text-lg">Как начать</span>
           <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-4">
@@ -48,19 +48,9 @@ const HowItWorks = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {steps.map((step, index) => (
             <div key={index} className="relative animate-scale-in" style={{ animationDelay: `${index * 0.15}s` }}>
-              {/* Connection Line */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-20 left-full w-full h-0.5 bg-primary/20 -z-10" />
-              )}
-
-              <Card className="p-8 bg-card/80 backdrop-blur-sm hover:bg-card transition-all duration-300 hover:-translate-y-2 hover:shadow-glow border-2 border-border h-full">
-                {/* Step Number */}
-                <div className="text-6xl font-bold text-primary/20 mb-4">
-                  {step.number}
-                </div>
-
+              <Card className="p-8 bg-card/80 backdrop-blur-sm hover:bg-card transition-all duration-300 hover:-translate-y-2 hover:shadow-glow border-2 border-border h-full flex flex-col items-center text-center">
                 {/* Icon */}
-                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-glow mx-auto animate-zoom-in-out-sync">
                   <step.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
 
@@ -77,7 +67,10 @@ const HowItWorks = () => {
         {/* Additional Info Cards */}
         <div className="mt-16 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <Card className="p-8 bg-primary/10 border-2 border-primary/30 backdrop-blur-sm">
-            <h3 className="text-xl font-bold mb-3">📱 Два приложения для работы</h3>
+            <h3 className="text-xl font-bold mb-3 flex items-center gap-2 text-white">
+              <SmartphoneIcon className="w-5 h-5 text-primary" />
+              Два приложения для работы
+            </h3>
             <ul className="space-y-2 text-secondary-foreground/80">
               <li>• <strong>Яндекс Про</strong> — приложение для работы с заказами и маршрутизации</li>
               <li>• <strong>Taxi CRM</strong> — приложение для вывода денежных средств</li>
@@ -86,7 +79,10 @@ const HowItWorks = () => {
           </Card>
 
           <Card className="p-8 bg-primary/10 border-2 border-primary/30 backdrop-blur-sm">
-            <h3 className="text-xl font-bold mb-3">🎯 Самостоятельная регистрация</h3>
+            <h3 className="text-xl font-bold mb-3 flex items-center gap-2 text-white">
+              <Target className="w-5 h-5 text-primary" />
+              Самостоятельная регистрация
+            </h3>
             <p className="text-secondary-foreground/80 mb-4">
               Вы можете зарегистрироваться самостоятельно или с помощью наших специалистов.
             </p>

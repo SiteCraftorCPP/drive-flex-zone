@@ -65,9 +65,9 @@ const Pricing = () => {
 
         <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
           {pricing.map((category, index) => (
-            <Card 
+            <Card
               key={index}
-              className="p-8 hover:shadow-glow transition-all duration-500 animate-scale-in border-2 border-border hover:border-primary/50"
+              className="p-8 shadow-glow transition-all duration-500 animate-scale-in border-2 border-primary/50"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <h3 className="text-2xl font-bold mb-8 pb-4 border-b border-border">
@@ -121,7 +121,7 @@ const Pricing = () => {
 
         {/* Tariffs Info */}
         <div className="mt-16 max-w-4xl mx-auto">
-          <Card className="p-8 bg-card border-2 border-border">
+          <Card className="p-8 bg-card border-2 border-primary/50 shadow-glow">
             <h3 className="text-2xl font-bold mb-6 text-center">Тарифы в грузовом</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center p-4 bg-muted/50 rounded-xl">

@@ -30,12 +30,11 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="font-bold mb-4">Компания</h4>
+            <h4 className="font-bold mb-4">Навигация</h4>
             <ul className="space-y-2 text-sm text-secondary-foreground/70">
-              <li><a href="#" className="hover:text-primary transition-colors">О нас</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Контакты</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Вакансии</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Партнерам</a></li>
+              <li><a href="#services" className="hover:text-primary transition-colors">Три способа начать зарабатывать</a></li>
+              <li><a href="#how-it-works" className="hover:text-primary transition-colors">Всего 4 простых шага</a></li>
+              <li><a href="#pricing" className="hover:text-primary transition-colors">Прозрачные условия работы</a></li>
             </ul>
           </div>
 
@@ -43,9 +42,9 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Контакты</h4>
             <ul className="space-y-2 text-sm text-secondary-foreground/70">
-              <li>+7 (999) 123-45-67</li>
-              <li>info@taxipark.ru</li>
-              <li>Москва, ул. Примерная, 1</li>
+              <li><a href="https://wa.me/79269883077" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WhatsApp +7 926 988-30-77</a></li>
+              <li><a href="https://t.me/Alex_skorp" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Telegram: @Alex_skorp</a></li>
+              <li>Москва, ул. Митинская, д. 16</li>
             </ul>
           </div>
         </div>
@@ -53,11 +52,11 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-secondary-foreground/70">
-            © 2024 ТаксиПарк. Все права защищены.
+            © 2024 ООО "СЕПТИКПРО". Все права защищены.
           </p>
           <div className="flex gap-6 text-sm text-secondary-foreground/70">
-            <a href="#" className="hover:text-primary transition-colors">Политика конфиденциальности</a>
-            <a href="#" className="hover:text-primary transition-colors">Условия использования</a>
+            <a href="#pricing" className="hover:text-primary transition-colors">Политика конфиденциальности</a>
+            <a href="#how-it-works" className="hover:text-primary transition-colors">Условия использования</a>
           </div>
         </div>
       </div>

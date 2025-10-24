@@ -50,8 +50,8 @@ const Services = () => {
   ];
 
   const handleConnect = (serviceTitle: string) => {
-    // Здесь можно добавить логику отправки формы или открытия модального окна
-    console.log(`Подключение к: ${serviceTitle}`);
+    // Функционал будет реализован позже
+    console.log(`Выбрана услуга: ${serviceTitle}`);
   };
 
   return (
@@ -69,11 +69,10 @@ const Services = () => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
-            <Card 
+            <Card
               key={index}
-              className={`relative overflow-hidden p-8 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 animate-scale-in border-2 ${
-                service.featured ? 'border-primary' : 'border-border'
-              }`}
+              className={`group relative overflow-hidden p-8 hover:shadow-glow hover:shadow-primary/30 transition-all duration-700 hover:-translate-y-4 hover:scale-105 animate-scale-in border-2 flex flex-col h-full ${service.featured ? 'border-primary hover:border-primary/80' : 'border-border hover:border-primary/50'
+                }`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {service.featured && (
@@ -85,47 +84,53 @@ const Services = () => {
               )}
 
               {/* Gradient Background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} -z-10`} />
+              <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} -z-10 group-hover:opacity-100 transition-opacity duration-700`} />
+
+              {/* Additional hover background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-2xl pointer-events-none" />
 
               {/* Icon */}
-              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <service.icon className="w-8 h-8 text-primary-foreground" />
+              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-xl group-hover:shadow-primary/50 transition-all duration-500 animate-zoom-in-out-sync">
+                <service.icon className="w-8 h-8 text-primary-foreground group-hover:text-white transition-colors duration-500" />
               </div>
 
               {/* Title & Income */}
-              <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
+              <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors duration-500">{service.title}</h3>
               <div className="flex items-center gap-2 mb-4">
-                <Package className="w-4 h-4 text-primary" />
-                <p className="text-2xl font-bold text-primary">{service.income}</p>
+                <Package className="w-4 h-4 text-primary group-hover:scale-110 transition-transform duration-300" />
+                <p className="text-2xl font-bold text-primary group-hover:scale-105 transition-transform duration-300">{service.income}</p>
               </div>
 
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-6 group-hover:text-foreground transition-colors duration-500">
                 {service.description}
               </p>
 
               {/* Features */}
               <ul className="space-y-3 mb-6">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-2 h-2 rounded-full bg-primary" />
+                  <li key={idx} className="flex items-start gap-2 group-hover:translate-x-2 transition-transform duration-300" style={{ transitionDelay: `${idx * 50}ms` }}>
+                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/30 group-hover:scale-110 transition-all duration-300">
+                      <div className="w-2 h-2 rounded-full bg-primary group-hover:bg-white transition-colors duration-300" />
                     </div>
-                    <span className="text-sm">{feature}</span>
+                    <span className="text-sm group-hover:text-foreground transition-colors duration-300">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               {/* Commission Badge */}
-              <div className="bg-secondary/10 rounded-lg p-3 mb-6 border border-border">
-                <p className="text-sm font-medium text-center">{service.commission}</p>
+              <div className="bg-secondary/10 rounded-lg p-3 mb-6 border border-border mt-auto group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-500">
+                <p className="text-sm font-medium text-center group-hover:text-primary transition-colors duration-500">{service.commission}</p>
               </div>
 
               {/* CTA Button */}
-              <Button 
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-6 text-lg shadow-glow transition-all hover:scale-105"
+              <Button
+                className="relative w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-6 text-lg shadow-glow transition-all duration-500 hover:scale-110 hover:shadow-xl hover:shadow-primary/50 group overflow-hidden rounded-2xl border-2 border-primary/20 hover:border-primary/40"
                 onClick={() => handleConnect(service.title)}
               >
-                Подключиться
+                <span className="relative">
+                  Подключиться
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </Button>
             </Card>
           ))}

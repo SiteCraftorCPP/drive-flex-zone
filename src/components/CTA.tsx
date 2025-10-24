@@ -1,14 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Clock, Bike, Car, Truck } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Bike, Car, Truck, Building2, User, FileText, Calendar, MessageCircle, Rocket } from "lucide-react";
 
 const CTA = () => {
   const scrollToForm = (service: string) => {
-    const formSection = document.getElementById('contact-form');
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: 'smooth' });
-      console.log(`Выбрана услуга: ${service}`);
-    }
+    // Функционал будет реализован позже
+    console.log(`Выбрана услуга: ${service}`);
   };
 
   const services = [
@@ -35,7 +32,7 @@ const CTA = () => {
   return (
     <>
       {/* CTA Section with Buttons */}
-      <section className="py-24 bg-gradient-to-br from-secondary via-secondary to-secondary/90 text-secondary-foreground relative overflow-hidden">
+      <section id="services-cta" className="py-24 bg-gradient-to-br from-secondary via-secondary to-secondary/90 text-secondary-foreground overflow-hidden relative z-0">
         {/* Animated Background */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl animate-pulse" />
@@ -43,7 +40,7 @@ const CTA = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         </div>
 
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16 animate-fade-in">
@@ -66,15 +63,15 @@ const CTA = () => {
                   {/* Gradient Background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-50 group-hover:opacity-100 transition-opacity duration-500`} />
 
-                  <div className="relative z-10">
+                  <div className="relative">
                     {/* Icon */}
-                    <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-glow mx-auto">
+                    <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-glow mx-auto animate-zoom-in-out-sync">
                       <service.icon className="w-8 h-8 text-primary-foreground" />
                     </div>
 
                     {/* Title */}
                     <h3 className="text-xl font-black mb-3 text-center">{service.title}</h3>
-                    
+
                     {/* Income */}
                     <div className="text-3xl font-black text-primary mb-6 text-center">
                       {service.income}
@@ -98,93 +95,201 @@ const CTA = () => {
       {/* Contact Info Section */}
       <section id="contact-form" className="py-24 bg-gradient-to-b from-background via-muted/20 to-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-16 animate-fade-in">
+            <div className="text-center mb-20 animate-fade-in">
               <span className="inline-block text-primary font-black text-lg mb-4 px-6 py-2 bg-primary/10 rounded-full border-2 border-primary/30">
                 КОНТАКТЫ
               </span>
               <h2 className="text-5xl lg:text-6xl font-black mt-4 mb-6 leading-tight">
                 Свяжитесь с <span className="text-primary">нами</span>
               </h2>
-              <p className="text-2xl text-muted-foreground font-medium">
-                Мы ответим на все ваши вопросы и поможем с подключением
+              <p className="text-2xl text-muted-foreground font-medium max-w-4xl mx-auto">
+                ООО "СЕПТИКПРО" - ваш надежный партнер в сфере доставки. Мы поможем вам начать зарабатывать уже сегодня!
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8">
-              {/* Contact Cards */}
-              <Card className="group p-10 bg-gradient-to-br from-card via-card to-card/50 backdrop-blur-xl border-2 border-border hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-glow animate-slide-in-left">
+            {/* Company Info Grid */}
+            <div className="grid lg:grid-cols-3 gap-8 mb-16">
+              {/* Company Details Card */}
+              <Card className="group p-8 bg-gradient-to-br from-card via-card to-card/50 backdrop-blur-xl border-2 border-border hover:border-primary/50 transition-all duration-700 hover:-translate-y-4 hover:shadow-glow hover:shadow-primary/30 animate-scale-in hover:scale-105">
                 <div className="flex items-start gap-6 mb-8">
-                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-glow">
-                    <Phone className="w-8 h-8 text-primary-foreground" />
+                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-xl group-hover:shadow-primary/50 transition-all duration-500 shadow-glow animate-zoom-in-out-sync">
+                    <Building2 className="w-8 h-8 text-primary-foreground group-hover:text-white transition-colors duration-500" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-black mb-3">Телефон</h3>
-                    <a href="tel:+79991234567" className="text-3xl font-black text-primary hover:underline">
-                      +7 (999) 123-45-67
-                    </a>
-                    <p className="text-muted-foreground mt-2">Звоните с 9:00 до 21:00</p>
+                    <h3 className="text-2xl font-black mb-3">ООО "СЕПТИКПРО"</h3>
+                    <p className="text-muted-foreground">Официальный партнер Яндекс</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-glow">
-                    <Mail className="w-8 h-8 text-primary-foreground" />
+                <div className="space-y-6">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="p-4 bg-card/50 rounded-xl border border-border">
+                      <div className="flex items-center gap-2 mb-2">
+                        <FileText className="w-4 h-4 text-primary" />
+                        <span className="font-bold text-sm text-muted-foreground">ИНН</span>
+                      </div>
+                      <div className="font-black text-lg">7733431709</div>
+                    </div>
+                    <div className="p-4 bg-card/50 rounded-xl border border-border">
+                      <div className="flex items-center gap-2 mb-2">
+                        <FileText className="w-4 h-4 text-primary" />
+                        <span className="font-bold text-sm text-muted-foreground">КПП</span>
+                      </div>
+                      <div className="font-black text-lg">773301001</div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-black mb-3">Email</h3>
-                    <a href="mailto:info@taxipark.ru" className="text-2xl font-black text-primary hover:underline break-all">
-                      info@taxipark.ru
-                    </a>
-                    <p className="text-muted-foreground mt-2">Ответим в течение часа</p>
+
+                  <div className="p-4 bg-card/50 rounded-xl border border-border">
+                    <div className="flex items-center gap-2 mb-2">
+                      <FileText className="w-4 h-4 text-primary" />
+                      <span className="font-bold text-sm text-muted-foreground">ОГРН</span>
+                    </div>
+                    <div className="font-black text-lg">1237700874443</div>
+                  </div>
+
+                  <div className="p-4 bg-primary/10 rounded-xl border border-primary/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Calendar className="w-4 h-4 text-primary" />
+                      <span className="font-bold text-sm text-primary">Дата образования</span>
+                    </div>
+                    <div className="font-black text-lg text-primary">12.12.2023</div>
                   </div>
                 </div>
               </Card>
 
-              {/* Info Card */}
-              <Card className="group p-10 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent backdrop-blur-xl border-2 border-primary/30 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-glow animate-slide-in-right">
-                <h3 className="text-3xl font-black mb-8 flex items-center gap-3">
-                  <span className="text-4xl">⚡</span>
-                  Быстрый старт
-                </h3>
-                
-                <ul className="space-y-6">
-                  <li className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <Clock className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="font-black text-lg mb-1">Регистрация за 10 минут</div>
-                      <div className="text-muted-foreground">Заполните форму онлайн</div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <MapPin className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="font-black text-lg mb-1">Работа по всему городу</div>
-                      <div className="text-muted-foreground">Выбирайте удобные районы</div>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                      <Phone className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="font-black text-lg mb-1">Поддержка 24/7</div>
-                      <div className="text-muted-foreground">Всегда на связи</div>
-                    </div>
-                  </li>
-                </ul>
+              {/* Contact Methods Card */}
+              <Card className="group p-8 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent backdrop-blur-xl border-2 border-primary/30 hover:border-primary/50 transition-all duration-700 hover:-translate-y-4 hover:shadow-glow hover:shadow-primary/30 animate-scale-in hover:scale-105" style={{ animationDelay: '0.1s' }}>
+                <div className="flex items-start gap-6 mb-8">
+                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-xl group-hover:shadow-primary/50 transition-all duration-500 shadow-glow animate-zoom-in-out-sync">
+                    <User className="w-8 h-8 text-primary-foreground group-hover:text-white transition-colors duration-500" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-black mb-3">Руководитель</h3>
+                    <p className="text-muted-foreground">Генеральный директор</p>
+                  </div>
+                </div>
 
-                <div className="mt-10 p-6 bg-gradient-diagonal text-primary-foreground rounded-2xl shadow-glow">
-                  <p className="text-center font-black text-xl">
-                    🚀 Начните зарабатывать уже сегодня!
-                  </p>
+                <div className="space-y-6">
+                  <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl border border-primary/30">
+                    <div className="text-center">
+                      <div className="font-black text-xl mb-2">Ражев Александр Владимирович</div>
+                      <div className="text-primary font-semibold">Генеральный директор</div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="p-4 bg-card/50 rounded-xl border border-border hover:border-primary/30 transition-colors duration-300">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                          <MessageCircle className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <div className="font-bold text-sm text-muted-foreground">Telegram</div>
+                          <Button asChild variant="link" className="p-0 h-auto font-black text-primary text-lg hover:text-primary/80">
+                            <a href="https://t.me/Alex_skorp" target="_blank" rel="noopener noreferrer">
+                              @Alex_skorp
+                            </a>
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4 bg-card/50 rounded-xl border border-border hover:border-primary/30 transition-colors duration-300">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                          <Phone className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <div className="font-bold text-sm text-muted-foreground">WhatsApp</div>
+                          <Button asChild variant="link" className="p-0 h-auto font-black text-primary text-lg hover:text-primary/80">
+                            <a href="https://wa.me/79269883077" target="_blank" rel="noopener noreferrer">
+                              +7 926 988-30-77
+                            </a>
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </Card>
+
+              {/* Address Card */}
+              <Card className="group p-8 bg-gradient-to-br from-card via-card to-card/50 backdrop-blur-xl border-2 border-border hover:border-primary/50 transition-all duration-700 hover:-translate-y-4 hover:shadow-glow hover:shadow-primary/30 animate-scale-in hover:scale-105" style={{ animationDelay: '0.2s' }}>
+                <div className="flex items-start gap-6 mb-8">
+                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-xl group-hover:shadow-primary/50 transition-all duration-500 shadow-glow animate-zoom-in-out-sync">
+                    <MapPin className="w-8 h-8 text-primary-foreground group-hover:text-white transition-colors duration-500" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-black mb-3">Юр адрес</h3>
+                    <p className="text-muted-foreground">Москва, Митино</p>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="p-6 bg-card/50 rounded-xl border border-border">
+                    <div className="flex items-start gap-3 mb-4">
+                      <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-4 h-4 text-primary" />
+                      </div>
+                      <div>
+                        <div className="font-bold text-sm text-muted-foreground">Полный адрес</div>
+                      </div>
+                    </div>
+                    <div className="font-black text-lg leading-relaxed">
+                      125430, г. Москва,<br />
+                      вн.тер.г. Муниципальный Округ Митино,<br />
+                      ул. Митинская, д. 16,<br />
+                      Помещение 23П
+                    </div>
+                  </div>
+
+                  <div
+                    className="p-6 bg-gradient-diagonal text-primary-foreground rounded-xl shadow-glow hover:scale-105 hover:shadow-xl hover:shadow-primary/50 transition-all duration-500 cursor-pointer group"
+                    onClick={() => {
+                      const formSection = document.getElementById('contact-form');
+                      if (formSection) {
+                        formSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                  >
+                    <div className="text-center">
+                      <div className="font-black text-xl mb-2">
+                        <div className="flex items-center justify-center gap-2 mb-2">
+                          <Rocket className="w-6 h-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
+                        </div>
+                        Готовы начать зарабатывать?
+                      </div>
+                      <div className="text-sm opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                        Свяжитесь с нами прямо сейчас!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button asChild size="lg" className="bg-gradient-to-r from-primary via-primary/90 to-primary hover:from-primary/90 hover:via-primary hover:to-primary/90 text-primary-foreground font-black px-12 py-6 text-xl shadow-glow transition-all duration-300 hover:scale-105 group overflow-hidden rounded-2xl border-2 border-primary/20 hover:border-primary/40">
+                <a href="https://t.me/Alex_skorp" target="_blank" rel="noopener noreferrer">
+                  <span className="relative flex items-center gap-3">
+                    <MessageCircle className="w-6 h-6" />
+                    Связаться в Telegram
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                </a>
+              </Button>
+
+              <Button asChild size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-black px-12 py-6 text-xl transition-all duration-300 hover:scale-105 group overflow-hidden rounded-2xl">
+                <a href="https://wa.me/79269883077" target="_blank" rel="noopener noreferrer">
+                  <span className="relative flex items-center gap-3">
+                    <Phone className="w-6 h-6" />
+                    Связаться в WhatsApp
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
