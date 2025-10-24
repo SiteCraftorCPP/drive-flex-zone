@@ -1,102 +1,69 @@
 import { Card } from "@/components/ui/card";
-import { Wallet, Zap, Shield, TrendingUp, Users, Award } from "lucide-react";
+import { DollarSign, TrendingUp, Clock, Smartphone, Shield, HeadphonesIcon } from "lucide-react";
 
 const Benefits = () => {
   const benefits = [
     {
-      icon: Wallet,
-      title: "Низкая комиссия",
-      description: "От 2% для СМЗ и от 3% для парковых водителей. Одна из самых низких на рынке.",
-      color: "text-green-500"
+      icon: DollarSign,
+      title: "Высокий доход",
+      description: "От 120 000 до 420 000 рублей в месяц в зависимости от выбранного направления",
+      gradient: "from-primary/20 to-primary/5"
     },
     {
-      icon: Zap,
-      title: "Выплаты день в день",
-      description: "Моментальные выводы средств без ограничений. 1% комиссия за вывод.",
-      color: "text-yellow-500"
+      icon: TrendingUp,
+      title: "Минимальная комиссия",
+      description: "Всего от 2% комиссии парка. Выводите заработанные средства каждый день",
+      gradient: "from-primary/25 to-primary/10"
+    },
+    {
+      icon: Clock,
+      title: "Быстрая регистрация",
+      description: "Подключение к Яндекс Доставке занимает всего 10 минут",
+      gradient: "from-primary/20 to-primary/5"
+    },
+    {
+      icon: Smartphone,
+      title: "Удобные приложения",
+      description: "Яндекс Про для работы и Taxi CRM для вывода средств",
+      gradient: "from-primary/25 to-primary/10"
     },
     {
       icon: Shield,
       title: "Официальный партнер",
-      description: "Прямое партнерство с Яндекс. Гарантия стабильности и поддержки.",
-      color: "text-blue-500"
+      description: "Проверенный партнер Яндекс с прозрачными условиями",
+      gradient: "from-primary/20 to-primary/5"
     },
     {
-      icon: TrendingUp,
-      title: "Рост дохода",
-      description: "Доступ к проектам Яндекс с повышенными ставками и бонусами.",
-      color: "text-purple-500"
-    },
-    {
-      icon: Users,
+      icon: HeadphonesIcon,
       title: "Поддержка 24/7",
-      description: "Всегда на связи. Помощь в любых вопросах по работе и техническим проблемам.",
-      color: "text-pink-500"
-    },
-    {
-      icon: Award,
-      title: "Бонусная программа",
-      description: "Система мотивации для активных курьеров. Дополнительные выплаты и призы.",
-      color: "text-orange-500"
+      description: "Наша команда всегда готова помочь вам",
+      gradient: "from-primary/25 to-primary/10"
     }
   ];
 
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
-      {/* Background Decoration */}
+    <section className="py-24 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <span className="text-primary font-semibold text-lg">Преимущества</span>
-          <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-4">
-            Почему выбирают нас
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Более 1000 курьеров и водителей уже работают с нами и получают стабильный доход
-          </p>
+        <div className="text-center mb-20 animate-fade-in">
+          <span className="inline-block text-primary font-black text-lg mb-4 px-6 py-2 bg-primary/10 rounded-full border-2 border-primary/30">ПРЕИМУЩЕСТВА</span>
+          <h2 className="text-5xl lg:text-6xl font-black mt-4 mb-6">Почему выбирают <span className="text-primary">нас</span></h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {benefits.map((benefit, index) => (
-            <Card 
-              key={index}
-              className="p-8 hover:shadow-glow transition-all duration-500 hover:-translate-y-2 animate-scale-in bg-card/50 backdrop-blur-sm border-2 border-border hover:border-primary/50"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className={`w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 ${benefit.color}`}>
-                <benefit.icon className="w-7 h-7" />
+            <Card key={index} className="group relative p-10 hover:shadow-glow transition-all duration-500 hover:-translate-y-3 animate-scale-in border-2 hover:border-primary/50 overflow-hidden" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              <div className="w-20 h-20 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all relative z-10">
+                <benefit.icon className="w-10 h-10 text-primary" />
               </div>
-
-              <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {benefit.description}
-              </p>
+              <h3 className="text-2xl font-black mb-4 relative z-10">{benefit.title}</h3>
+              <p className="text-muted-foreground relative z-10">{benefit.description}</p>
             </Card>
           ))}
-        </div>
-
-        {/* Stats Section */}
-        <div className="mt-20 grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          <div className="text-center animate-fade-in">
-            <div className="text-4xl font-bold text-primary mb-2">1000+</div>
-            <p className="text-muted-foreground">Активных курьеров</p>
-          </div>
-          <div className="text-center animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <div className="text-4xl font-bold text-primary mb-2">24/7</div>
-            <p className="text-muted-foreground">Поддержка</p>
-          </div>
-          <div className="text-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="text-4xl font-bold text-primary mb-2">2%</div>
-            <p className="text-muted-foreground">Мин. комиссия</p>
-          </div>
-          <div className="text-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="text-4xl font-bold text-primary mb-2">5 лет</div>
-            <p className="text-muted-foreground">На рынке</p>
-          </div>
         </div>
       </div>
     </section>

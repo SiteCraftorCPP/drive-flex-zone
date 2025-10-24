@@ -1,129 +1,79 @@
 import { Button } from "@/components/ui/button";
-import { Truck, Bike, Car } from "lucide-react";
+import { ArrowRight, DollarSign, Zap, Calendar } from "lucide-react";
 
 const Hero = () => {
-  const scrollToServices = () => {
-    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section className="relative min-h-screen overflow-hidden bg-background">
-      {/* Diagonal Background Shape */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 w-full h-full bg-gradient-diagonal opacity-10 transform rotate-12 translate-x-1/4 -translate-y-1/4" />
-        <div className="absolute bottom-0 left-0 w-2/3 h-2/3 bg-primary/5 transform -rotate-12 -translate-x-1/4 translate-y-1/4 rounded-[3rem]" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-background via-secondary/5 to-background">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="container mx-auto px-4 pt-20 pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          {/* Left Content */}
-          <div className="space-y-8 animate-slide-in-left">
-            <div className="inline-block">
-              <span className="px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-medium">
-                Официальный партнер Яндекс
-              </span>
+      <div className="container mx-auto px-4 py-20 relative">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 border-2 border-primary/40 rounded-full px-8 py-3 mb-10 animate-fade-in backdrop-blur-sm hover:scale-105 transition-all shadow-glow">
+            <div className="relative">
+              <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
             </div>
-            
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-              Начни зарабатывать{" "}
-              <span className="text-primary">уже сегодня</span>
-            </h1>
-            
-            <p className="text-xl text-muted-foreground">
-              Подключаем курьеров и водителей к Яндекс Доставке. 
-              Работай по удобному графику, выводи деньги каждый день.
-            </p>
+            <span className="text-base font-bold">Официальный партнер Яндекс</span>
+          </div>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-4">
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <Bike className="w-5 h-5 text-primary" />
-                  <p className="text-sm text-muted-foreground">Пеший/Вело</p>
+          <h1 className="text-6xl lg:text-8xl font-black mb-8 animate-fade-in leading-[1.1]">
+            <span className="block mb-2">Начни зарабатывать</span>
+            <span className="block bg-gradient-diagonal bg-clip-text text-transparent">уже сегодня</span>
+          </h1>
+
+          <p className="text-xl lg:text-3xl text-muted-foreground mb-16 max-w-3xl mx-auto animate-fade-in font-medium">
+            Подключайся к <span className="text-primary font-bold">Яндекс Доставке</span> и получай стабильный доход
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 max-w-5xl mx-auto">
+            <div className="group relative bg-gradient-to-br from-card via-card to-card/50 backdrop-blur-xl border-2 border-border rounded-3xl p-8 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-glow animate-scale-in overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform mx-auto">
+                  <DollarSign className="w-8 h-8 text-primary" />
                 </div>
-                <p className="text-2xl font-bold">120-180k₽</p>
-              </div>
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <Car className="w-5 h-5 text-primary" />
-                  <p className="text-sm text-muted-foreground">Легковой</p>
-                </div>
-                <p className="text-2xl font-bold">180-220k₽</p>
-              </div>
-              <div className="space-y-1">
-                <div className="flex items-center gap-2">
-                  <Truck className="w-5 h-5 text-primary" />
-                  <p className="text-sm text-muted-foreground">Грузовой</p>
-                </div>
-                <p className="text-2xl font-bold">210-420k₽</p>
+                <div className="text-5xl font-black text-primary mb-3">120-420k ₽</div>
+                <div className="text-muted-foreground font-semibold text-lg">Ежемесячный доход</div>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg shadow-glow transition-all hover:scale-105"
-                onClick={scrollToServices}
-              >
-                Выбрать направление
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold px-8 py-6 text-lg transition-all hover:scale-105"
-              >
-                Узнать больше
-              </Button>
+            <div className="group relative bg-gradient-to-br from-card via-card to-card/50 backdrop-blur-xl border-2 border-primary/30 rounded-3xl p-8 hover:border-primary transition-all duration-500 hover:-translate-y-2 hover:shadow-glow animate-scale-in overflow-hidden scale-105">
+              <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-bold z-20">ХИТ</div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform mx-auto shadow-glow">
+                  <Zap className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <div className="text-5xl font-black text-primary mb-3">от 2%</div>
+                <div className="text-muted-foreground font-semibold text-lg">Комиссия парка</div>
+              </div>
+            </div>
+
+            <div className="group relative bg-gradient-to-br from-card via-card to-card/50 backdrop-blur-xl border-2 border-border rounded-3xl p-8 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-glow animate-scale-in overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform mx-auto">
+                  <Calendar className="w-8 h-8 text-primary" />
+                </div>
+                <div className="text-5xl font-black text-primary mb-3">10 минут</div>
+                <div className="text-muted-foreground font-semibold text-lg">Быстрая регистрация</div>
+              </div>
             </div>
           </div>
 
-          {/* Right Content - Visual Element */}
-          <div className="relative animate-slide-in-right">
-            <div className="relative z-10 bg-card rounded-3xl p-8 shadow-card border border-border">
-              <h3 className="text-2xl font-bold mb-6">Почему выбирают нас?</h3>
-              
-              <div className="space-y-4">
-                <div className="flex items-start gap-4 p-4 bg-primary/10 rounded-xl hover:bg-primary/20 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">💰</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Высокий доход</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Зарабатывайте от 120 000 до 420 000₽ в месяц
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 bg-primary/10 rounded-xl hover:bg-primary/20 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">⚡</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Быстрые выплаты</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Выводите деньги день в день без ограничений
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 bg-primary/10 rounded-xl hover:bg-primary/20 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">📅</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">Свободный график</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Работайте когда удобно, стройте график сами
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Decorative Elements */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full animate-float" />
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+          <div className="animate-fade-in">
+            <Button 
+              size="lg"
+              className="relative bg-gradient-diagonal hover:opacity-90 text-primary-foreground font-black px-16 py-8 text-2xl shadow-glow transition-all duration-300 hover:scale-105 group overflow-hidden"
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <span className="relative z-10 flex items-center gap-3">
+                Выбрать направление
+                <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform duration-300" />
+              </span>
+            </Button>
           </div>
         </div>
       </div>
