@@ -9,12 +9,12 @@ const Pricing = () => {
       plans: [
         {
           type: "Без СМЗ",
-          commission: "2%",
+          commission: "3%",
           features: ["Комиссия парка", "1% за вывод средств"]
         },
         {
           type: "С СМЗ",
-          commission: "2%",
+          commission: "3%",
           features: ["Комиссия парка", "1% за вывод средств"]
         }
       ]
@@ -29,7 +29,7 @@ const Pricing = () => {
         },
         {
           type: "Парковый СМЗ",
-          commission: "2.4%",
+          commission: "3%",
           features: ["Комиссия парка", "1% за вывод средств"]
         }
       ]
@@ -44,7 +44,7 @@ const Pricing = () => {
         },
         {
           type: "Парковый СМЗ",
-          commission: "2.4%",
+          commission: "3%",
           features: ["Комиссия парка", "1% за вывод средств"]
         }
       ]
@@ -126,7 +126,7 @@ const Pricing = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-secondary/20 rounded-xl p-6 backdrop-blur-sm">
                 <p className="text-lg font-semibold mb-2">Комиссия парка</p>
-                <p className="text-4xl font-bold">5%</p>
+                <p className="text-4xl font-bold">1%</p>
               </div>
               <div className="bg-secondary/20 rounded-xl p-6 backdrop-blur-sm">
                 <p className="text-lg font-semibold mb-2">Комиссия Яндекс</p>
