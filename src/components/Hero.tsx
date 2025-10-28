@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, DollarSign, Zap, Calendar, Star, TrendingUp, Users, Award } from "lucide-react";
+import { ArrowRight, DollarSign, Zap, Calendar, Star, TrendingUp, Users, Award, Bike, Car, Truck } from "lucide-react";
+import YandexLogo from "./YandexLogo";
 
 const Hero = () => {
   return (
@@ -11,19 +12,55 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary/5 via-transparent to-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }} />
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-32 left-20 animate-bounce" style={{ animationDelay: '1s', animationDuration: '3s' }}>
-          <Star className="w-6 h-6 text-primary/30" />
+      {/* Animated Vehicle Icons - Desktop Only */}
+      <div className="hidden lg:block absolute inset-0 pointer-events-none z-0">
+        {/* Left Side Icons */}
+        <div className="absolute top-[10%] left-[5%] animate-float" style={{ animationDelay: '0s', animationDuration: '4s' }}>
+          <Bike className="w-12 h-12" style={{ color: '#000000' }} />
         </div>
-        <div className="absolute top-40 right-32 animate-bounce" style={{ animationDelay: '2s', animationDuration: '4s' }}>
-          <TrendingUp className="w-8 h-8 text-primary/20" />
+        <div className="absolute top-[35%] left-[8%] animate-float" style={{ animationDelay: '1.2s', animationDuration: '4.5s' }}>
+          <Car className="w-12 h-12" style={{ color: '#000000' }} />
         </div>
-        <div className="absolute bottom-40 left-32 animate-bounce" style={{ animationDelay: '3s', animationDuration: '3.5s' }}>
-          <Users className="w-7 h-7 text-primary/25" />
+        <div className="absolute top-[60%] left-[3%] animate-float" style={{ animationDelay: '0.5s', animationDuration: '5s' }}>
+          <Bike className="w-12 h-12" style={{ color: '#000000' }} />
         </div>
-        <div className="absolute bottom-32 right-20 animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '4.5s' }}>
-          <Award className="w-6 h-6 text-primary/30" />
+        <div className="absolute bottom-[25%] left-[7%] animate-float" style={{ animationDelay: '2s', animationDuration: '4s' }}>
+          <Car className="w-12 h-12" style={{ color: '#000000' }} />
+        </div>
+        <div className="absolute bottom-[5%] left-[4%] animate-float" style={{ animationDelay: '1.8s', animationDuration: '5.5s' }}>
+          <div className="relative">
+            <Truck className="w-14 h-14" style={{ color: '#000000' }} />
+            <YandexLogo />
+          </div>
+        </div>
+        <div className="absolute top-[75%] left-[10%] animate-float" style={{ animationDelay: '0.3s', animationDuration: '4.8s' }}>
+          <Car className="w-12 h-12" style={{ color: '#000000' }} />
+        </div>
+
+        {/* Right Side Icons */}
+        <div className="absolute top-[8%] right-[5%] animate-float" style={{ animationDelay: '0.8s', animationDuration: '4s' }}>
+          <Car className="w-12 h-12" style={{ color: '#000000' }} />
+        </div>
+        <div className="absolute top-[40%] right-[8%] animate-float" style={{ animationDelay: '1.5s', animationDuration: '4.5s' }}>
+          <Bike className="w-12 h-12" style={{ color: '#000000' }} />
+        </div>
+        <div className="absolute top-[65%] right-[3%] animate-float" style={{ animationDelay: '0.7s', animationDuration: '5s' }}>
+          <div className="relative">
+            <Truck className="w-14 h-14" style={{ color: '#000000' }} />
+            <YandexLogo />
+          </div>
+        </div>
+        <div className="absolute bottom-[30%] right-[6%] animate-float" style={{ animationDelay: '2.3s', animationDuration: '4s' }}>
+          <Bike className="w-12 h-12" style={{ color: '#000000' }} />
+        </div>
+        <div className="absolute bottom-[8%] right-[4%] animate-float" style={{ animationDelay: '1.1s', animationDuration: '5.5s' }}>
+          <Car className="w-12 h-12" style={{ color: '#000000' }} />
+        </div>
+        <div className="absolute top-[80%] right-[9%] animate-float" style={{ animationDelay: '0.4s', animationDuration: '4.8s' }}>
+          <div className="relative">
+            <Truck className="w-14 h-14" style={{ color: '#000000' }} />
+            <YandexLogo />
+          </div>
         </div>
       </div>
 
@@ -35,23 +72,20 @@ const Hero = () => {
               <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
               <div className="absolute inset-0 w-3 h-3 bg-primary rounded-full animate-ping opacity-75" />
             </div>
-            <span className="text-base font-bold">Официальный партнер Яндекс</span>
+            <span className="text-base font-bold">Яндекс Парк "<span className="text-primary font-black inline-block transform hover:scale-110 transition-all duration-300 drop-shadow-[0_0_15px_hsl(11_84%_48%)]">БЕЗ ТОРМОЗОВ</span>"</span>
           </div>
 
           {/* Enhanced Headline */}
           <h1 className="text-6xl lg:text-8xl font-black mb-8 animate-fade-in leading-[1.1]">
             <span className="block mb-2 animate-slide-in-left">Начни зарабатывать</span>
-            <span className="block bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent animate-slide-in-right" style={{ animationDelay: '0.3s' }}>
+            <span className="block bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent animate-slide-in-right relative overflow-visible" style={{ animationDelay: '0.3s', lineHeight: '1.2', paddingBottom: '0.2em' }}>
               уже сегодня
             </span>
           </h1>
 
           {/* Enhanced Subtitle */}
           <p className="text-xl lg:text-3xl text-muted-foreground mb-16 max-w-4xl mx-auto animate-fade-in font-medium" style={{ animationDelay: '0.6s' }}>
-            Подключайся к <span className="text-primary font-bold relative">
-              Яндекс Доставке
-              <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-primary/50 to-primary/20 rounded-full" />
-            </span> и получай стабильный доход
+            Подключайся к парку <span className="text-primary font-bold relative inline after:content-[''] after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-primary/50 after:to-primary/20 after:rounded-full">БЕЗ ТОРМОЗОВ</span> и получай стабильный доход
           </p>
 
           {/* Enhanced Stats Cards */}
@@ -84,7 +118,7 @@ const Hero = () => {
                 <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 mx-auto shadow-lg animate-zoom-in-out-sync">
                   <Zap className="w-10 h-10 text-primary-foreground" />
                 </div>
-                <div className="text-6xl font-black text-primary mb-4 group-hover:scale-105 transition-transform duration-300">от 2%</div>
+                <div className="text-6xl font-black text-primary mb-4 group-hover:scale-105 transition-transform duration-300">3%</div>
                 <div className="text-muted-foreground font-semibold text-xl">Комиссия парка</div>
                 <div className="text-sm text-primary/70 mt-2 font-medium">Минимальная ставка</div>
               </div>

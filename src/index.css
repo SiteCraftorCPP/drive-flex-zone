@@ -17,8 +17,8 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 40 10% 10%;
 
-    --primary: 45 93% 52%;
-    --primary-foreground: 40 10% 10%;
+    --primary: 11 84% 48%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 40 10% 10%;
     --secondary-foreground: 0 0% 100%;
@@ -26,21 +26,21 @@ All colors MUST be HSL.
     --muted: 45 30% 95%;
     --muted-foreground: 40 10% 40%;
 
-    --accent: 45 93% 52%;
-    --accent-foreground: 40 10% 10%;
+    --accent: 11 84% 48%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 40 20% 90%;
     --input: 40 20% 90%;
-    --ring: 45 93% 52%;
+    --ring: 11 84% 48%;
 
     --radius: 1rem;
 
-    --gradient-diagonal: linear-gradient(135deg, hsl(45 93% 52%) 0%, hsl(40 95% 45%) 100%);
-    --gradient-accent: linear-gradient(180deg, hsl(45 93% 52% / 0.1) 0%, transparent 100%);
-    --shadow-glow: 0 10px 40px hsl(45 93% 52% / 0.3);
+    --gradient-diagonal: linear-gradient(135deg, hsl(11 84% 48%) 0%, hsl(10 88% 42%) 100%);
+    --gradient-accent: linear-gradient(180deg, hsl(11 84% 48% / 0.1) 0%, transparent 100%);
+    --shadow-glow: 0 10px 40px hsl(11 84% 48% / 0.3);
     --shadow-card: 0 4px 20px hsl(40 10% 10% / 0.1);
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -147,8 +147,8 @@ All colors MUST be HSL.
     --popover: 40 8% 15%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 45 93% 52%;
-    --primary-foreground: 40 10% 10%;
+    --primary: 11 84% 48%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 40 8% 18%;
     --secondary-foreground: 0 0% 98%;
@@ -156,17 +156,17 @@ All colors MUST be HSL.
     --muted: 40 8% 18%;
     --muted-foreground: 40 10% 65%;
 
-    --accent: 45 93% 52%;
-    --accent-foreground: 40 10% 10%;
+    --accent: 11 84% 48%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 40 8% 20%;
     --input: 40 8% 20%;
-    --ring: 45 93% 52%;
+    --ring: 11 84% 48%;
 
-    --shadow-glow: 0 10px 40px hsl(45 93% 52% / 0.2);
+    --shadow-glow: 0 10px 40px hsl(11 84% 48% / 0.2);
     --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
   }
 }

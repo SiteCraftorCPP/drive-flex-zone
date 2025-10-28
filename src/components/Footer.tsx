@@ -1,4 +1,4 @@
-import { Truck } from "lucide-react";
+import { Truck, Bike, Car } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
                 <Truck className="w-6 h-6 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold">ТаксиПарк</span>
+              <span className="text-xl font-bold">БЕЗ ТОРМОЗОВ</span>
             </div>
             <p className="text-sm text-secondary-foreground/70">
               Официальный партнер Яндекс Доставки. Помогаем курьерам и водителям зарабатывать больше.
@@ -42,8 +42,8 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Контакты</h4>
             <ul className="space-y-2 text-sm text-secondary-foreground/70">
-              <li><a href="https://wa.me/79269883077" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WhatsApp +7 926 988-30-77</a></li>
-              <li><a href="https://t.me/Alex_skorp" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Telegram: @Alex_skorp</a></li>
+              <li><a href="https://wa.me/79268553077" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">WhatsApp +7 926 855-30-77</a></li>
+              <li><a href="https://t.me/Park_Beztormozov" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Telegram: @Park_Beztormozov</a></li>
               <li>Москва, ул. Митинская, д. 16</li>
             </ul>
           </div>

@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
-import { Check } from "lucide-react";
+import { Check, Bike, Car, Truck } from "lucide-react";
+import YandexLogo from "./YandexLogo";
 
 const Pricing = () => {
   const pricing = [
@@ -51,8 +52,27 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-muted/30 relative overflow-hidden">
+      {/* Animated Vehicle Icons - Desktop Only */}
+      <div className="hidden lg:block absolute inset-0 pointer-events-none z-0">
+        <div className="absolute top-[12%] left-[5%] animate-float" style={{ animationDelay: '0s', animationDuration: '4s' }}>
+          <div className="relative">
+            <Truck className="w-10 h-10" style={{ color: '#000000' }} />
+            <YandexLogo />
+          </div>
+        </div>
+        <Bike className="absolute top-[45%] left-[7%] w-10 h-10 animate-float" style={{ color: '#000000', animationDelay: '1.2s', animationDuration: '4.5s' }} />
+        <Car className="absolute top-[70%] left-[4%] w-10 h-10 animate-float" style={{ color: '#000000', animationDelay: '0.5s', animationDuration: '5s' }} />
+        <Bike className="absolute top-[18%] right-[6%] w-10 h-10 animate-float" style={{ color: '#000000', animationDelay: '0.8s', animationDuration: '4s' }} />
+        <div className="absolute top-[60%] right-[4%] animate-float" style={{ animationDelay: '1.5s', animationDuration: '4.5s' }}>
+          <div className="relative">
+            <Truck className="w-12 h-12" style={{ color: '#000000' }} />
+            <YandexLogo />
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16 animate-fade-in">
           <span className="text-primary font-semibold text-lg">Тарифы</span>
           <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-4">
@@ -120,7 +140,7 @@ const Pricing = () => {
         </Card>
 
         {/* Tariffs Info */}
-        <div className="mt-16 max-w-4xl mx-auto">
+        <div className="mt-16 max-w-4xl mx-auto" translate="no">
           <Card className="p-8 bg-card border-2 border-primary/50 shadow-glow">
             <h3 className="text-2xl font-bold mb-6 text-center">Тарифы в грузовом</h3>
             <div className="grid md:grid-cols-3 gap-6">

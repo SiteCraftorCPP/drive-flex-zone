@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock, Bike, Car, Truck, Building2, User, FileText, Calendar, MessageCircle, Rocket } from "lucide-react";
+import YandexLogo from "./YandexLogo";
 
 const CTA = () => {
   const scrollToForm = (service: string) => {
@@ -33,6 +34,20 @@ const CTA = () => {
     <>
       {/* CTA Section with Buttons */}
       <section id="services-cta" className="py-24 bg-gradient-to-br from-secondary via-secondary to-secondary/90 text-secondary-foreground overflow-hidden relative z-0">
+        {/* Animated Vehicle Icons - Desktop Only */}
+        <div className="hidden lg:block absolute inset-0 pointer-events-none z-0">
+          <Bike className="absolute top-[10%] left-[4%] w-10 h-10 animate-float text-primary" style={{ animationDelay: '0s', animationDuration: '4s' }} />
+          <Car className="absolute top-[35%] left-[6%] w-10 h-10 animate-float text-primary" style={{ animationDelay: '1.2s', animationDuration: '4.5s' }} />
+          <div className="absolute top-[65%] left-[3%] animate-float" style={{ animationDelay: '0.5s', animationDuration: '5s' }}>
+            <div className="relative">
+              <Truck className="w-12 h-12 text-primary" />
+              <YandexLogo />
+            </div>
+          </div>
+          <Car className="absolute top-[15%] right-[5%] w-10 h-10 animate-float text-primary" style={{ animationDelay: '0.8s', animationDuration: '4s' }} />
+          <Bike className="absolute top-[55%] right-[7%] w-10 h-10 animate-float text-primary" style={{ animationDelay: '1.5s', animationDuration: '4.5s' }} />
+        </div>
+
         {/* Animated Background */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl animate-pulse" />
@@ -93,7 +108,21 @@ const CTA = () => {
       </section>
 
       {/* Contact Info Section */}
-      <section id="contact-form" className="py-24 bg-gradient-to-b from-background via-muted/20 to-background">
+      <section id="contact-form" className="py-24 bg-gradient-to-b from-background via-muted/20 to-background relative">
+        {/* Animated Vehicle Icons - Desktop Only */}
+        <div className="hidden lg:block absolute inset-0 pointer-events-none z-0">
+          <Car className="absolute top-[8%] left-[3%] w-10 h-10 animate-float" style={{ color: '#000000', animationDelay: '0s', animationDuration: '4s' }} />
+          <div className="absolute top-[38%] left-[5%] animate-float" style={{ animationDelay: '1.2s', animationDuration: '4.5s' }}>
+            <div className="relative">
+              <Truck className="w-12 h-12" style={{ color: '#000000' }} />
+              <YandexLogo />
+            </div>
+          </div>
+          <Bike className="absolute top-[68%] left-[4%] w-10 h-10 animate-float" style={{ color: '#000000', animationDelay: '0.5s', animationDuration: '5s' }} />
+          <Bike className="absolute top-[12%] right-[4%] w-10 h-10 animate-float" style={{ color: '#000000', animationDelay: '0.8s', animationDuration: '4s' }} />
+          <Car className="absolute top-[58%] right-[6%] w-10 h-10 animate-float" style={{ color: '#000000', animationDelay: '1.5s', animationDuration: '4.5s' }} />
+        </div>
+
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             {/* Header */}
@@ -105,20 +134,44 @@ const CTA = () => {
                 Свяжитесь с <span className="text-primary">нами</span>
               </h2>
               <p className="text-2xl text-muted-foreground font-medium max-w-4xl mx-auto">
-                ООО "СЕПТИКПРО" - ваш надежный партнер в сфере доставки. Мы поможем вам начать зарабатывать уже сегодня!
+                Парк <span className="text-primary font-bold">БЕЗ ТОРМОЗОВ</span> - ваш надежный партнер в сфере доставки. Мы поможем вам начать зарабатывать уже сегодня!
               </p>
             </div>
 
-            {/* Company Info Grid */}
+            {/* Map Card */}
+            <Card className="p-6 md:p-8 bg-gradient-to-br from-card via-card to-card/50 backdrop-blur-xl border-2 border-border shadow-glow mb-16 animate-scale-in">
+              <div className="flex items-start gap-6 mb-8">
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 shadow-glow animate-zoom-in-out-sync">
+                  <MapPin className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-black mb-3">Адрес:</h3>
+                  <p className="text-muted-foreground">Москва, Митино, ул. Митинская, д. 16, Помещение 23П</p>
+                </div>
+              </div>
+
+              <div className="w-full rounded-xl border-2 border-border overflow-hidden">
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?ll=37.373356,55.842438&amp;z=17&amp;l=map&amp;pt=37.373356,55.842438,comma"
+                  width="100%"
+                  height="600"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </Card>
+
+            {/* Park Info Grid */}
             <div className="grid lg:grid-cols-3 gap-8 mb-16">
-              {/* Company Details Card */}
+              {/* Park Details Card */}
               <Card className="group p-8 bg-gradient-to-br from-card via-card to-card/50 backdrop-blur-xl border-2 border-border hover:border-primary/50 transition-all duration-700 hover:-translate-y-4 hover:shadow-glow hover:shadow-primary/30 animate-scale-in hover:scale-105">
                 <div className="flex items-start gap-6 mb-8">
                   <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-xl group-hover:shadow-primary/50 transition-all duration-500 shadow-glow animate-zoom-in-out-sync">
                     <Building2 className="w-8 h-8 text-primary-foreground group-hover:text-white transition-colors duration-500" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-black mb-3">ООО "СЕПТИКПРО"</h3>
+                    <h3 className="text-2xl font-black mb-3">ООО «СЕПТИКПРО»</h3>
                     <p className="text-muted-foreground">Официальный партнер Яндекс</p>
                   </div>
                 </div>
@@ -148,149 +201,47 @@ const CTA = () => {
                     </div>
                     <div className="font-black text-lg">1237700874443</div>
                   </div>
-
-                  <div className="p-4 bg-primary/10 rounded-xl border border-primary/30">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Calendar className="w-4 h-4 text-primary" />
-                      <span className="font-bold text-sm text-primary">Дата образования</span>
-                    </div>
-                    <div className="font-black text-lg text-primary">12.12.2023</div>
-                  </div>
                 </div>
               </Card>
 
-              {/* Contact Methods Card */}
-              <Card className="group p-8 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent backdrop-blur-xl border-2 border-primary/30 hover:border-primary/50 transition-all duration-700 hover:-translate-y-4 hover:shadow-glow hover:shadow-primary/30 animate-scale-in hover:scale-105" style={{ animationDelay: '0.1s' }}>
-                <div className="flex items-start gap-6 mb-8">
-                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-xl group-hover:shadow-primary/50 transition-all duration-500 shadow-glow animate-zoom-in-out-sync">
-                    <User className="w-8 h-8 text-primary-foreground group-hover:text-white transition-colors duration-500" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-black mb-3">Руководитель</h3>
-                    <p className="text-muted-foreground">Генеральный директор</p>
-                  </div>
+              {/* CTA Buttons */}
+              <div className="lg:col-span-2 flex flex-col gap-8 pt-24 lg:pt-16">
+                <div className="text-center">
+                  <h3 className="text-5xl lg:text-7xl font-black mb-4 relative inline-block">
+                    <span className="text-primary inline-block" style={{
+                      textShadow: '0 0 15px rgba(229, 52, 18, 0.6)',
+                      filter: 'drop-shadow(0 0 8px rgba(229, 52, 18, 0.4))'
+                    }}>
+                      Парк БЕЗ ТОРМОЗОВ
+                    </span>
+                  </h3>
+                  <p className="text-xl text-muted-foreground">Ваш надежный партнер</p>
                 </div>
 
-                <div className="space-y-6">
-                  <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl border border-primary/30">
-                    <div className="text-center">
-                      <div className="font-black text-xl mb-2">Ражев Александр Владимирович</div>
-                      <div className="text-primary font-semibold">Генеральный директор</div>
-                    </div>
-                  </div>
+                <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
+                  <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary via-primary/90 to-primary hover:from-primary/90 hover:via-primary hover:to-primary/90 text-primary-foreground font-black px-12 py-6 text-xl shadow-glow transition-all duration-300 hover:scale-105 group overflow-hidden rounded-2xl border-2 border-primary/20 hover:border-primary/40">
+                    <a href="https://t.me/Park_Beztormozov" target="_blank" rel="noopener noreferrer">
+                      <span className="relative flex items-center gap-3">
+                        <MessageCircle className="w-6 h-6" />
+                        Связаться в Telegram
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    </a>
+                  </Button>
 
-                  <div className="space-y-4">
-                    <div className="p-4 bg-card/50 rounded-xl border border-border hover:border-primary/30 transition-colors duration-300">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
-                          <MessageCircle className="w-5 h-5 text-primary" />
-                        </div>
-                        <div>
-                          <div className="font-bold text-sm text-muted-foreground">Telegram</div>
-                          <Button asChild variant="link" className="p-0 h-auto font-black text-primary text-lg hover:text-primary/80">
-                            <a href="https://t.me/Alex_skorp" target="_blank" rel="noopener noreferrer">
-                              @Alex_skorp
-                            </a>
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-4 bg-card/50 rounded-xl border border-border hover:border-primary/30 transition-colors duration-300">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
-                          <Phone className="w-5 h-5 text-primary" />
-                        </div>
-                        <div>
-                          <div className="font-bold text-sm text-muted-foreground">WhatsApp</div>
-                          <Button asChild variant="link" className="p-0 h-auto font-black text-primary text-lg hover:text-primary/80">
-                            <a href="https://wa.me/79269883077" target="_blank" rel="noopener noreferrer">
-                              +7 926 988-30-77
-                            </a>
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary via-primary/90 to-primary hover:from-primary/90 hover:via-primary hover:to-primary/90 text-primary-foreground font-black px-12 py-6 text-xl shadow-glow transition-all duration-300 hover:scale-105 group overflow-hidden rounded-2xl border-2 border-primary/20 hover:border-primary/40">
+                    <a href="https://wa.me/79268553077" target="_blank" rel="noopener noreferrer">
+                      <span className="relative flex items-center gap-3">
+                        <Phone className="w-6 h-6" />
+                        Связаться в WhatsApp
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    </a>
+                  </Button>
                 </div>
-              </Card>
-
-              {/* Address Card */}
-              <Card className="group p-8 bg-gradient-to-br from-card via-card to-card/50 backdrop-blur-xl border-2 border-border hover:border-primary/50 transition-all duration-700 hover:-translate-y-4 hover:shadow-glow hover:shadow-primary/30 animate-scale-in hover:scale-105" style={{ animationDelay: '0.2s' }}>
-                <div className="flex items-start gap-6 mb-8">
-                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-xl group-hover:shadow-primary/50 transition-all duration-500 shadow-glow animate-zoom-in-out-sync">
-                    <MapPin className="w-8 h-8 text-primary-foreground group-hover:text-white transition-colors duration-500" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-black mb-3">Юр адрес</h3>
-                    <p className="text-muted-foreground">Москва, Митино</p>
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  <div className="p-6 bg-card/50 rounded-xl border border-border">
-                    <div className="flex items-start gap-3 mb-4">
-                      <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-4 h-4 text-primary" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-sm text-muted-foreground">Полный адрес</div>
-                      </div>
-                    </div>
-                    <div className="font-black text-lg leading-relaxed">
-                      125430, г. Москва,<br />
-                      вн.тер.г. Муниципальный Округ Митино,<br />
-                      ул. Митинская, д. 16,<br />
-                      Помещение 23П
-                    </div>
-                  </div>
-
-                  <div
-                    className="p-6 bg-gradient-diagonal text-primary-foreground rounded-xl shadow-glow hover:scale-105 hover:shadow-xl hover:shadow-primary/50 transition-all duration-500 cursor-pointer group"
-                    onClick={() => {
-                      const formSection = document.getElementById('contact-form');
-                      if (formSection) {
-                        formSection.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                  >
-                    <div className="text-center">
-                      <div className="font-black text-xl mb-2">
-                        <div className="flex items-center justify-center gap-2 mb-2">
-                          <Rocket className="w-6 h-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
-                        </div>
-                        Готовы начать зарабатывать?
-                      </div>
-                      <div className="text-sm opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                        Свяжитесь с нами прямо сейчас!
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+              </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button asChild size="lg" className="bg-gradient-to-r from-primary via-primary/90 to-primary hover:from-primary/90 hover:via-primary hover:to-primary/90 text-primary-foreground font-black px-12 py-6 text-xl shadow-glow transition-all duration-300 hover:scale-105 group overflow-hidden rounded-2xl border-2 border-primary/20 hover:border-primary/40">
-                <a href="https://t.me/Alex_skorp" target="_blank" rel="noopener noreferrer">
-                  <span className="relative flex items-center gap-3">
-                    <MessageCircle className="w-6 h-6" />
-                    Связаться в Telegram
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                </a>
-              </Button>
-
-              <Button asChild size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-black px-12 py-6 text-xl transition-all duration-300 hover:scale-105 group overflow-hidden rounded-2xl">
-                <a href="https://wa.me/79269883077" target="_blank" rel="noopener noreferrer">
-                  <span className="relative flex items-center gap-3">
-                    <Phone className="w-6 h-6" />
-                    Связаться в WhatsApp
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                </a>
-              </Button>
-            </div>
           </div>
         </div>
       </section>

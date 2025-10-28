@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
-import { FileText, Smartphone, DollarSign, CheckCircle, SmartphoneIcon, Target } from "lucide-react";
+import { FileText, Smartphone, DollarSign, CheckCircle, SmartphoneIcon, Target, Bike, Car, Truck } from "lucide-react";
+import YandexLogo from "./YandexLogo";
 
 const HowItWorks = () => {
   const steps = [
@@ -13,7 +14,7 @@ const HowItWorks = () => {
       number: "02",
       icon: Smartphone,
       title: "Скачайте приложения",
-      description: "Яндекс Про для работы с заказами и Taxi CRM для вывода средств."
+      description: "Яндекс Про для работы с заказами."
     },
     {
       number: "03",
@@ -30,7 +31,21 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-20 bg-secondary text-secondary-foreground relative overflow-hidden">
+    <section id="how-it-works" className="py-20 bg-secondary text-secondary-foreground relative overflow-hidden">
+      {/* Animated Vehicle Icons - Desktop Only */}
+      <div className="hidden lg:block absolute inset-0 pointer-events-none z-0">
+        <Car className="absolute top-[10%] left-[4%] w-10 h-10 animate-float text-primary" style={{ animationDelay: '0s', animationDuration: '4s' }} />
+        <Bike className="absolute top-[35%] left-[6%] w-10 h-10 animate-float text-primary" style={{ animationDelay: '1.2s', animationDuration: '4.5s' }} />
+        <div className="absolute top-[65%] left-[3%] animate-float" style={{ animationDelay: '0.5s', animationDuration: '5s' }}>
+          <div className="relative">
+            <Truck className="w-12 h-12 text-primary" />
+            <YandexLogo />
+          </div>
+        </div>
+        <Bike className="absolute top-[15%] right-[5%] w-10 h-10 animate-float text-primary" style={{ animationDelay: '0.8s', animationDuration: '4s' }} />
+        <Car className="absolute top-[55%] right-[8%] w-10 h-10 animate-float text-primary" style={{ animationDelay: '1.5s', animationDuration: '4.5s' }} />
+      </div>
+
       {/* Diagonal Decoration */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 transform skew-x-12 translate-x-1/3" />
 
@@ -48,15 +63,15 @@ const HowItWorks = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {steps.map((step, index) => (
             <div key={index} className="relative animate-scale-in" style={{ animationDelay: `${index * 0.15}s` }}>
-              <Card className="p-8 bg-card/80 backdrop-blur-sm hover:bg-card transition-all duration-300 hover:-translate-y-2 hover:shadow-glow border-2 border-border h-full flex flex-col items-center text-center">
+              <Card className="group p-8 bg-card/80 backdrop-blur-sm hover:bg-card transition-all duration-500 hover:-translate-y-4 hover:shadow-glow hover:shadow-primary/30 hover:scale-105 hover:border-primary border-2 border-border h-full flex flex-col items-center text-center cursor-pointer">
                 {/* Icon */}
-                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-glow mx-auto animate-zoom-in-out-sync">
-                  <step.icon className="w-8 h-8 text-primary-foreground" />
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-xl group-hover:shadow-primary/50 transition-all duration-500 shadow-glow mx-auto animate-zoom-in-out-sync">
+                  <step.icon className="w-8 h-8 text-primary-foreground group-hover:text-white transition-colors duration-500" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-500">{step.title}</h3>
+                <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-500">
                   {step.description}
                 </p>
               </Card>
@@ -69,11 +84,10 @@ const HowItWorks = () => {
           <Card className="p-8 bg-primary/10 border-2 border-primary/30 backdrop-blur-sm">
             <h3 className="text-xl font-bold mb-3 flex items-center gap-2 text-white">
               <SmartphoneIcon className="w-5 h-5 text-primary" />
-              Два приложения для работы
+              Приложения для работы
             </h3>
             <ul className="space-y-2 text-secondary-foreground/80">
               <li>• <strong>Яндекс Про</strong> — приложение для работы с заказами и маршрутизации</li>
-              <li>• <strong>Taxi CRM</strong> — приложение для вывода денежных средств</li>
               <li className="text-sm mt-3">* При первом выводе приложение попросит подписать оферту</li>
             </ul>
           </Card>
