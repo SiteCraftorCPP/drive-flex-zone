@@ -133,7 +133,7 @@ const CTA = () => {
                 Свяжитесь с <span className="text-primary">нами</span>
               </h2>
               <p className="text-2xl text-muted-foreground font-medium max-w-4xl mx-auto">
-                Парк <span className="text-primary font-bold">БЕЗ ТОРМОЗОВ</span> - ваш надежный партнер в сфере доставки. Мы поможем вам начать зарабатывать уже сегодня!
+                <span className="text-foreground">Парк</span> <span className="text-primary font-bold">БЕЗ ТОРМОЗОВ</span> - ваш надежный партнер в сфере доставки. Мы поможем вам начать зарабатывать уже сегодня!
               </p>
             </div>
 
@@ -207,11 +207,11 @@ const CTA = () => {
               <div className="lg:col-span-2 flex flex-col gap-8 pt-24 lg:pt-16">
                 <div className="text-center">
                   <h3 className="text-5xl lg:text-7xl font-black mb-4 relative inline-block">
-                    <span className="text-primary inline-block" style={{
+                    <span className="text-foreground">Парк</span> <span className="text-primary inline-block" style={{
                       textShadow: '0 0 15px rgba(229, 52, 18, 0.6)',
                       filter: 'drop-shadow(0 0 8px rgba(229, 52, 18, 0.4))'
                     }}>
-                      Парк БЕЗ ТОРМОЗОВ
+                      БЕЗ ТОРМОЗОВ
                     </span>
                   </h3>
                   <p className="text-xl text-muted-foreground">Ваш надежный партнер</p>

@@ -76,8 +76,8 @@ const Hero = () => {
           </div>
 
           {/* Enhanced Headline */}
-          <h1 className="text-6xl lg:text-8xl font-black mb-8 animate-fade-in leading-[1.1]">
-            <span className="block mb-2 animate-slide-in-left">Начни зарабатывать</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-black mb-8 animate-fade-in leading-[1.1] px-2 sm:px-0">
+            <span className="block mb-2 animate-slide-in-left break-words hyphens-auto">Начни зарабатывать</span>
             <span className="block bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent animate-slide-in-right relative overflow-visible" style={{ animationDelay: '0.3s', lineHeight: '1.2', paddingBottom: '0.2em' }}>
               уже сегодня
             </span>
@@ -85,7 +85,9 @@ const Hero = () => {
 
           {/* Enhanced Subtitle */}
           <p className="text-xl lg:text-3xl text-muted-foreground mb-16 max-w-4xl mx-auto animate-fade-in font-medium" style={{ animationDelay: '0.6s' }}>
-            Подключайся к парку <span className="text-primary font-bold relative inline after:content-[''] after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-1 after:bg-gradient-to-r after:from-primary/50 after:to-primary/20 after:rounded-full">БЕЗ ТОРМОЗОВ</span> и получай стабильный доход
+            <span className="block sm:inline">Подключайся к парку</span>{' '}
+            <span className="inline-block max-w-fit text-primary font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-1 after:bg-gradient-to-r after:from-primary/50 after:to-primary/20 after:rounded-full">БЕЗ ТОРМОЗОВ</span>
+            {' '}<span className="block sm:inline">и получай стабильный доход</span>
           </p>
 
           {/* Enhanced Stats Cards */}

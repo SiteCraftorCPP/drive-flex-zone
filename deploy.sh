@@ -18,3 +18,4 @@ cp -r dist/* /home/username/public_html/
 
 echo "Deployment completed!"
 
+
