@@ -25,6 +25,13 @@ jobs:
       - name: Build
         run: npm run build
       
+      - name: Create .htaccess file
+        run: |
+          echo "Options -MultiViews" > dist/.htaccess
+          echo "RewriteEngine On" >> dist/.htaccess
+          echo "RewriteCond %{REQUEST_FILENAME} !-f" >> dist/.htaccess
+          echo "RewriteRule ^ index.html [QSA,L]" >> dist/.htaccess
+      
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
