@@ -174,7 +174,7 @@ const Services = () => {
 
                             {/* CTA Button */}
                             <Button asChild className="relative w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-6 text-lg shadow-glow transition-all duration-500 hover:scale-110 hover:shadow-xl hover:shadow-primary/50 group overflow-hidden rounded-2xl border-2 border-primary/20 hover:border-primary/40">
-                                <a href="https://t.me/bez1tormozovbot" target="_blank" rel="noopener noreferrer">
+                                <a href="https://t.me/bez_tormozovbot" target="_blank" rel="noopener noreferrer">
                                     <span className="relative">
                                         Подключиться
                                     </span>
