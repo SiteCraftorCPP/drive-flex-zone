@@ -29,7 +29,7 @@ const Hero = () => {
         </div>
         <div className="absolute bottom-[5%] left-[4%] animate-float" style={{ animationDelay: '1.8s', animationDuration: '5.5s' }}>
           <div className="relative">
-            <Truck className="w-14 h-14" style={{ color: '#000000' }} />
+          <Truck className="w-14 h-14" style={{ color: '#000000' }} />
             <YandexLogo />
           </div>
         </div>
@@ -46,7 +46,7 @@ const Hero = () => {
         </div>
         <div className="absolute top-[65%] right-[3%] animate-float" style={{ animationDelay: '0.7s', animationDuration: '5s' }}>
           <div className="relative">
-            <Truck className="w-14 h-14" style={{ color: '#000000' }} />
+          <Truck className="w-14 h-14" style={{ color: '#000000' }} />
             <YandexLogo />
           </div>
         </div>
@@ -58,7 +58,7 @@ const Hero = () => {
         </div>
         <div className="absolute top-[80%] right-[9%] animate-float" style={{ animationDelay: '0.4s', animationDuration: '4.8s' }}>
           <div className="relative">
-            <Truck className="w-14 h-14" style={{ color: '#000000' }} />
+          <Truck className="w-14 h-14" style={{ color: '#000000' }} />
             <YandexLogo />
           </div>
         </div>

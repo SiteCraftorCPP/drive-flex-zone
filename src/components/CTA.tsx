@@ -95,7 +95,7 @@ const CTA = () => {
                     {/* Button */}
                     <Button asChild className="w-full bg-gradient-diagonal hover:opacity-90 text-primary-foreground font-black py-6 text-lg shadow-glow transition-all duration-300 hover:scale-105 group-hover:shadow-glow">
                       <a href="https://t.me/bez_tormozovbot" target="_blank" rel="noopener noreferrer">
-                        Подключиться
+                      Подключиться
                       </a>
                     </Button>
                   </div>
